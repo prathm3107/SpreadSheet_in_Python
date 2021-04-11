@@ -5,9 +5,15 @@ class Worksheet:
         self.data = data
         
     def print_worksheet(self):
+        print(f"== {self.worksheet_name} ==")
+        print("\n")
+
         column_widths = [len(data) for row in self.data for data in row]
         print(" ".join(columns.ljust(max(column_widths)+2)
                       for columns in self.column_names))
-        for i in self.data:
-            print(" ".join(data.ljust(max(column_widths)+2) 
-                          for data in i))
+        print("\n")
+
+        for i in range(len(self.data[0])):
+            for j in range(len(self.data)):
+                print(self.data[j][i].ljust(max(column_widths) + 2), end = " ")
+            print("\n")
