@@ -29,7 +29,7 @@ while (op != 'q'):
             column_numbers.append(int(temp1[0]))
             if temp1[1] == '1':
                 way_to_sort.append(False)
-            elif temp[1] == '2':
+            elif temp1[1] == '2':
                 way_to_sort.append(True)
             temp1 = input("Enter the Column Number(starts with 0) and Way to sort(1. Ascending 2. Descending)\n **Enter q to finish**\n").split()
         w1.sort_data(column_numbers, way_to_sort)
