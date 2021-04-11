@@ -15,10 +15,22 @@ while(temp[0].lower() != 'q'):
     
 w1 = Worksheet(worksheet_name, column_names, worksheet_data)
 
-op = input("Enter the operation you want to perform \n1. Print Worksheet \n**Enter q to finish**\n")
+op = input("Enter the operation you want to perform \n1. Print Worksheet\n2. Sort the Data \n**Enter q to finish**\n")
 while (op != 'q'):
     if op == '1':
         print("\n")
         w1.print_worksheet()
         print("\n")
-    op = input("Enter the operation you want to perform: \n1. Print Worksheet \n**Enter q to finish**\n")
+    if op == '2':
+        column_numbers = []
+        way_to_sort = []
+        temp1 = input("Enter the Column Number(starts with 0) and Way to sort(1. Ascending 2. Descending)\n **Enter q to finish**\n").split()
+        while(temp1[0] != 'q'):
+            column_numbers.append(int(temp1[0]))
+            if temp1[1] == '1':
+                way_to_sort.append(False)
+            elif temp[1] == '2':
+                way_to_sort.append(True)
+            temp1 = input("Enter the Column Number(starts with 0) and Way to sort(1. Ascending 2. Descending)\n **Enter q to finish**\n").split()
+        w1.sort_data(column_numbers, way_to_sort)
+    op = input("Enter the operation you want to perform: \n1. Print Worksheet\n2. Sort the Data \n**Enter q to finish**\n")
